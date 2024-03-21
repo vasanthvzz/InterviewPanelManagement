@@ -1,30 +1,34 @@
-package com.vasanthvz.interviewpanel.managemeeting;
+package com.vasanthvz.interviewpanel.mainmenu;
 
-public class ManageMeetingModel {
-    private ManageMeetingView manageMeetingView;
+public class MainMenuModel {
+    private MainMenuView mainMenuView;
 
-    public ManageMeetingModel(ManageMeetingView manageMeetingView) {
-        this.manageMeetingView = manageMeetingView;
+    public MainMenuModel(MainMenuView mainMenuView) {
+        this.mainMenuView = mainMenuView;
     }
 
     public void redirectChoice(String choice) {
         switch (choice) {
             case "1": {
-                manageMeetingView.goManageCandidate();
+                mainMenuView.goManageCandidate();
                 break;
             }
             case "2": {
-                manageMeetingView.goManageInterviewer();
+                mainMenuView.goManageInterviewer();
+                break;
+            }
+            case "3": {
+                mainMenuView.goStartInterview();
                 break;
             }
             case "0": {
-                manageMeetingView.showAlert("Exiting.......");
+                mainMenuView.showAlert("Exiting.......");
                 break;
             }
 
             default:
-                manageMeetingView.showAlert("Please set a proper option");
-                manageMeetingView.init();
+                mainMenuView.showAlert("Please set a proper option");
+                mainMenuView.init();
                 break;
         }
     }

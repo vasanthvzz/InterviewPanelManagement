@@ -1,14 +1,14 @@
-package com.vasanthvz.interviewpanel.createmeeting;
+package com.vasanthvz.interviewpanel.createinterview;
 
-import com.vasanthvz.interviewpanel.managemeeting.ManageMeetingView;
+import com.vasanthvz.interviewpanel.mainmenu.MainMenuView;
 
 import java.util.Scanner;
 
-public class CreateMeetingView {
-    private CreateMeetingModel createMeetingModel;
+public class CreateInterviewView {
+    private CreateInterviewModel createInterviewModel;
 
-    public CreateMeetingView() {
-        createMeetingModel = new CreateMeetingModel(this);
+    public CreateInterviewView() {
+        createInterviewModel = new CreateInterviewModel(this);
     }
 
     public void init() {
@@ -18,9 +18,9 @@ public class CreateMeetingView {
         String name = sc.nextLine();
         System.out.println("Enter the number of candidates : ");
         int candidateCount = sc.nextInt();
-        System.out.println("Enter the number of interviewers : ");
-        int interviewerCount = sc.nextInt();
-        createMeetingModel.createNewMeeting(name, candidateCount, interviewerCount);
+        System.out.println("Enter the number of candidates at a time : ");
+        int candidateForOneCycle = sc.nextInt();
+        createInterviewModel.createNewMeeting(name, candidateCount, candidateForOneCycle);
     }
 
     void showAlert(String alert) {
@@ -29,7 +29,7 @@ public class CreateMeetingView {
 
     void onSuccessCreation() {
         showAlert("Meeting created successfully");
-        ManageMeetingView manageMeetingView = new ManageMeetingView();
-        manageMeetingView.init();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.init();
     }
 }

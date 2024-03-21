@@ -1,14 +1,16 @@
-package com.vasanthvz.interviewpanel.managemeeting;
+package com.vasanthvz.interviewpanel.mainmenu;
 
 import com.vasanthvz.interviewpanel.managecandidate.ManageCandidateView;
+import com.vasanthvz.interviewpanel.manageinterviewer.ManageInterviewerView;
+import com.vasanthvz.interviewpanel.startinterview.StartInterviewView;
 
 import java.util.Scanner;
 
-public class ManageMeetingView {
-    private ManageMeetingModel manageMeetingModel;
+public class MainMenuView {
+    private MainMenuModel mainMenuModel;
 
-    public ManageMeetingView() {
-        manageMeetingModel = new ManageMeetingModel(this);
+    public MainMenuView() {
+        mainMenuModel = new MainMenuModel(this);
     }
 
     public void init() {
@@ -16,9 +18,10 @@ public class ManageMeetingView {
         System.out.println("Please set an option to proceed");
         System.out.println("1.Manage Candidates");
         System.out.println("2.Manage Interviewers");
+        System.out.println("3.Start Interview");
         System.out.println("0.Exit");
         String choice = sc.next();
-        manageMeetingModel.redirectChoice(choice);
+        mainMenuModel.redirectChoice(choice);
 
     }
 
@@ -27,9 +30,15 @@ public class ManageMeetingView {
     }
 
     public void goManageInterviewer() {
+        new ManageInterviewerView().init();
     }
 
     void showAlert(String alert) {
         System.out.println(alert);
+    }
+
+
+    public void goStartInterview() {
+        new StartInterviewView().init();
     }
 }

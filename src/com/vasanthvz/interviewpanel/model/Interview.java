@@ -2,11 +2,10 @@ package com.vasanthvz.interviewpanel.model;
 
 import java.util.List;
 
-public class Meeting {
+public class Interview {
     private String name;
     private int totalCandidateCount;
-    private int currentCandidateCount;
-    private int interviewerCount;
+    private int candidateForOneCycle;
     private List<Interviewer> interviewerList;
     private List<Candidate> candidateList;
 
@@ -26,21 +25,12 @@ public class Meeting {
         this.totalCandidateCount = totalCandidateCount;
     }
 
-    public int getInterviewerCount() {
-        return interviewerCount;
+    public int getCandidateForOneCycle() {
+        return candidateForOneCycle;
     }
 
-    public void setInterviewerCount(int interviewerCount) {
-        this.interviewerCount = interviewerCount;
-    }
-
-
-    public int getCurrentCandidateCount() {
-        return currentCandidateCount;
-    }
-
-    public void setCurrentCandidateCount(int currentCandidateCount) {
-        this.currentCandidateCount = currentCandidateCount;
+    public void setCandidateForOneCycle(int candidateForOneCycle) {
+        this.candidateForOneCycle = candidateForOneCycle;
     }
 
 }
